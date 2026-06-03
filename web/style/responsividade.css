@@ -1,0 +1,200 @@
+/* RESPONSIVIDADE */
+@media (max-width: 786px){
+
+    /* Logo */
+    .logo{
+        font-size: 30px;
+    }
+
+    .logo img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .iconMenu{
+        width: 30px;
+        height: 30px;
+    }
+    .cardProdM b, .cardProdP b {
+        font-size: x-large;
+    }
+}
+
+@media (max-width: 504px){
+    section{
+        grid-template-columns: 1fr;
+    }
+    
+    .cardProdM{
+        height: 125px;
+        width: auto;
+        max-width: 100%;
+        flex-direction: row;
+        
+    }
+
+    .cardProdM img{
+        height: 125px;
+        width: auto;
+        border-radius: 20px 0px 0px 20px;
+    }
+
+    .cardProdM div{
+        width: 100%;
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    .cardProdM b{
+        font-size: x-large;
+    }
+
+    .cardProdM p, .cardProdMb{
+        margin: 0px;
+    }
+
+    .addProduto{
+        height: 125px;
+        width: auto;
+        max-width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .addProduto svg{
+        width: auto;
+        height: 70%;
+    }
+
+    .menu a, footer *, input, select, textarea, main button, main input[type="submit"], .addProduto, .funcPedidos, .voltar, .editarPedido p, .editarPedido b{
+        font-size: medium;
+    }
+
+
+    footer .logo b, footer .logo p{
+        color: white !important;
+        font-size: x-large;
+    }
+
+    h1{
+        font-size: xx-large;
+    }
+
+    .stepper{
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 480px){
+    input, select, textarea, button, input[type="submit"]{
+        font-size: medium;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .iconPesquisa{
+        width: 15px;
+        height: 15px;
+        margin: 0px;
+        color: #ffffff;
+    }
+    .pesquisa button{
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    main button, main input[type="submit"]{
+        font-size: medium;
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+/* Responsividade Tabela */
+@media (max-width: 768px){
+
+    table, thead, tbody, th, td, tr{
+        display: block;
+        font-size: medium;
+    }
+
+    thead, tbody> :first-child{
+        display: none;
+    }
+
+    tr{
+        margin-bottom: 15px;
+        border-radius: 20px;
+        box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+        background-color: white !important;
+    }
+
+    td::before{
+        position: absolute;
+        left: 20px;
+        font-weight: bold;
+    }
+
+    td:first-child{
+        background-color: #623C32;
+        color: white;
+        border-radius: 0;
+        border-radius: 20px 20px 0px 0px !important;
+    }
+
+    td{
+        border: none;
+        position: relative;
+        padding: 15px;
+        padding-left: 100px;
+    }
+
+    .tabelaPedido td:nth-child(1)::before{
+        content: "Pedido Nº";
+    }
+
+    .tabelaPedido td:nth-child(2)::before{
+        content: "Produto";
+    }
+
+    .tabelaPedido td:nth-child(3)::before{
+        content: "Cliente";
+    }
+    .tabelaPedido td:nth-child(4)::before{
+        content: "Total";
+    }
+
+    .tabelaPedido td:nth-child(5)::before{
+        content: "Data";
+    }
+    .tabelaPedido td:nth-child(6)::before{
+        content: "Status";
+        color: black;
+    }
+
+    td:last-child{
+        padding-left: 15px;
+    }
+    
+    td:last-child a{
+        background-color: #D45666;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+}

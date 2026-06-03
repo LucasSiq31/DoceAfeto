@@ -1,0 +1,831 @@
+/* ELEMENTOS DO HTML */
+
+h1, h2, h3{
+    font-family: 'Baloo 2';
+}
+
+/* Campos de texto */
+input, select{
+    background-color: #F4F4F4;
+    width: 100%;
+    border: 2px solid #623C32;
+    font-size: large;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+textarea{
+    background-color: #F4F4F4;
+    box-sizing: border-box;
+    height: 150px;
+    border: 2px solid #623C32;
+    font-size: large;
+    padding: 20px;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    min-width: 200px;
+    max-height: 300px;
+    min-height: 100px;
+    transition: 0.3s;
+    resize: none;
+}
+
+main input{
+    box-sizing: border-box;
+}
+
+main button, main input[type="submit"]{
+    width: 100%;
+    border: 0;
+    background-color: #623C32;
+    color: white;
+    font-size: large;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-family: 'Baloo 2';
+    transition: 0.3s;
+}
+
+main button:hover, main input[type="submit"]:hover{
+    filter: brightness(1.2);
+    transform: translateY(-7px);
+}
+
+/* Opções (radio e checkbox) */
+.opcao{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.caixa{
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #623C32;
+    transition: 0.3s;
+}
+
+/* Checkbox */
+input[type="checkbox"]{
+    display: none;
+}
+
+.ckb{
+    width: 30px;
+    height: 30px;
+    background-color: #cfcfcf;
+    display: inline-block;
+    border-radius: 6px;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+.ckb svg{
+    width: 0;
+    height: 0;
+    color: white;
+    transition: all 0.15s ease;
+}
+
+input[type="checkbox"]:checked + .ckb{
+    box-shadow: 0px 4px 4px rgba(98, 60, 50,0.25);
+    background-color: #623C32;
+}
+
+input[type="checkbox"]:checked + .ckb svg {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* Radio */
+input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    display: none;
+}
+
+.rad{
+    width: 30px;
+    height: 30px;
+    background-color: #cfcfcf;
+    display: inline-block;
+    border-radius: 30px;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 4px 4px rgba(0,0,0,0.25);
+}
+
+.rad::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: all 0.15s ease;
+
+}
+
+input[type="radio"]:checked + .rad{
+    background-color: #623C32;
+    box-shadow: 0px 4px 4px rgba(98, 60, 50, 0.25);
+}
+
+input[type="radio"]:checked + .rad:after{
+    transform: scale(1);
+}
+
+.caixa:has(input[type="radio"]:not(:checked)){
+    opacity: 0.7;
+}
+
+.caixa:has(input[type="radio"]:checked){
+    color: #623C32;
+    font-weight: bold;
+}
+
+/* Hover */
+input:hover, select:hover, textarea:hover, .caixa:hover{
+    background-color: #e5e5e5;
+}
+.ckb:hover, .rad:hover{
+    background-color: #e5e5e5;
+    transform: scale(1.05);
+}
+
+/* Tabela */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: large;
+}
+
+td, th {
+    border: 0 ;
+    text-align: left;
+    padding: 15px;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+
+tbody> :first-child{
+    background-color: #623C32;
+    color: white;
+}
+
+tbody tr> :first-child{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    
+}
+
+tbody tr> :last-child{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+td a{
+    text-decoration: underline;
+    color: #D45666;
+    font-style: italic;
+    cursor: pointer;
+}
+
+/* Sessões */
+.sessao{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.sessao h1{
+    white-space: nowrap;
+}
+
+section{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}
+
+.addProduto{
+    height: auto;
+    width: 100%;
+    max-width: 250px;
+    min-width: 0;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgba(212, 86, 102, 0.25);
+    border: 3px dotted #D45666;
+    box-sizing: border-box;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #D45666;
+    font-size: large;
+    transition: 0.3s;
+}
+
+.addProduto svg{
+    width: 30%;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+.addProduto:hover{
+    filter: brightness(1.3);
+    transform: translateY(-10px);
+}
+
+/* Card Produto Médio*/
+.cardProdM{
+    height: auto;
+    width: 100%;
+    max-width: 250px;
+    min-width: 0;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cardProdM img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.cardProdM div{
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 0px 0px 20px 20px;
+
+}
+
+.cardProdM p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0px;
+}
+
+.cardProdM b{
+    font-size: xx-large;
+}
+
+.cardProdM a{
+    font-family: 'Baloo 2';
+    background-color: #623C32;
+    color: white;
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Card Produto Pequeno */
+.cardProdP{
+    height: 150px;
+    
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cardProdP img{
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 20px 0px 0px 20px;
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.cardProdP div{
+    width: 100%;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 0px 20px 20px 0px;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.cardProdP p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px;
+}
+
+.cardProdP b{
+    font-size: xx-large;
+}
+
+.cardProdP a{
+    font-family: 'Baloo 2';
+    background-color: #623C32;
+    color: white;
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cardProdM a:hover, .cardProdP a:hover{
+    filter: brightness(1.2);
+    transform: translateY(-3px);
+}
+
+.quantidade{
+    display: flex;
+    padding: 0px;
+}
+
+
+.quantidade input{
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    background-color: #e5e5e5;
+    padding: 5px;
+    border-radius: 0px;
+    box-shadow: none;
+    margin: 0;
+}
+
+.quantidade button{
+    width: 15%;
+    padding: 5px;
+    box-shadow: none;
+    min-width: 30px;
+    margin-bottom: 0;
+}
+
+.quantidade input:hover, .quantidade button:hover{
+    transform: translateY(0px);
+}
+
+.quantidade button:first-child{
+    border-radius: 5px 0 0 5px;
+}
+
+.quantidade button:last-child{
+    border-radius: 0 5px 5px 0;
+}
+
+/* Modal e Alerts */
+.fundoModal, .fundoAlert{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.fundoModal{
+    align-items: center;
+}   
+
+.fundoModal input:hover, .fundoModal select:hover{
+    transform: scale(1);
+}
+
+.fundoAlert{
+    align-items: flex-start;
+    padding: 20px 0px;
+}
+
+.modal, .alert{
+    background-color: white;
+    width: min(500px, calc(100% - 60px));
+    padding: 30px;
+    border-radius: 40px;
+    max-height: calc(100% - 120px);
+    display: grid;
+    transition: 0.3s;
+    box-sizing: border-box;
+    grid-template-rows:
+        auto   /* header */
+        auto   /* linha */
+        1fr    /* conteúdo */
+        auto;  /* ações */
+}
+
+.modalHeader{
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+}
+
+.modalHeader svg{
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+}
+
+.modalHeader svg:hover{
+    transform: rotate(90deg);
+}
+
+.modal .conteudo{
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.modal .actions{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal button, .modal h1, .alert button{
+    margin: 0;
+}
+
+.cancelar{
+    background-color: rgb(167, 17, 17);
+}
+
+.checkConfirmado{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.checkConfirmado img{
+    width: 70%;
+    aspect-ratio: 1/1;
+    max-width: 250px;
+}
+
+.checkConfirmado svg{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 60%;
+    height: 60%;
+    max-width: 215px;
+
+    color: white;
+
+    pointer-events: none;
+}
+
+@keyframes animacaoConfirmacao{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+.checkConfirmado img{
+    animation: animacaoConfirmacao 10s linear infinite;
+}
+
+.modal h2{
+    text-align: center;
+}
+
+.alert button{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+@keyframes animacaoModal {
+    from {opacity: 0; scale: 0.5;}
+    to {opacity: 1; scale: 1;}
+}
+
+.modal{
+    animation-name: animacaoModal;
+    animation-duration: 0.3s;
+}
+
+@keyframes animacaoAlert{
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0px);}
+}
+
+.alert{
+    animation-name: animacaoAlert;
+    animation-duration: 0.3s;
+}
+
+
+/* Avisos */
+.aviso{
+    box-sizing: border-box;
+    border: 1px solid #0642D8;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0642D8;
+    background-color: rgba(6, 66, 216, 0.2);
+    margin-bottom: 10px;
+}
+
+.aviso p,.aviso h1{
+    margin: 5px 0px;
+}
+.aviso svg{
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+.aviso.perigo{
+    border-color: rgb(167, 17, 17);
+    color: rgb(167, 17, 17);
+    background-color: rgba(167, 17, 17, 0.2);
+}
+.aviso.importante{
+    border-color: rgb(167, 115, 17);
+    color: rgb(167, 115, 17);
+    background-color: rgba(167, 115, 17, 0.2);
+}
+.aviso.correto{
+    border-color: rgb(8, 146, 31);
+    color: rgb(8, 146, 31);
+    background-color: rgba(8, 146, 31, 0.2);
+}
+
+/* STEPPER */
+.stepper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Base para a linha */
+    flex: 1;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+    .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 25px;      /* Metade da altura do círculo */
+    left: 50%;      /* Começa no meio do círculo atual */
+    width: 100%;    /* Vai até o próximo */
+    height: 3px;
+    background: #ccc;
+    z-index: -1;    /* Fica atrás dos círculos */
+}
+
+.step span{
+    width: 50px;
+    height: 50px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step span svg{
+    width: 30px;
+    height: 30px;
+    color: #ccc;
+}
+
+.step.active span{
+    border-color: green;
+    color: green;
+}
+
+.step.active span svg{
+    color: green;
+}
+
+.step.completed span{
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+
+.step.completed span svg{
+    color: white;
+}
+
+.step.completed:not(:last-child)::after{
+    background: green;
+}
+
+/* Carrossel de imagens */
+.carrossel {
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slides img {
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+.acoes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.acoes button {
+    padding: 10px;
+    max-width: 30px;
+    margin: 10px;
+    border: none;
+    background: rgba(0,0,0,0.5);;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.acoes button:hover {
+    background-color: rgba(0,0,0,0.65);
+}
+.esquerda { left: 10px; }
+.direita { right: 10px; }
+
+/* Estilização separada */
+.editarPedido p, .editarPedido b{
+    font-size: large;
+}
+
+.total{
+    font-size: x-large;
+}
+.pagamento{
+    font-size: large;
+}
+
+.passo{
+    display: none;
+}
+
+.detalhesPedido{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.detalhesPedido img{
+    width: 30%;
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.detalhesPedido p{
+    word-break: keep-all;
+}
+
+.detalhesPedido div{
+    min-width: 300px;
+}
+
+.inputPesquisa{
+    display: flex;
+    gap: 10px;
+}
+
+.inputPesquisa button{
+    width: auto;
+}
+.inputPesquisa button svg{
+    height: 100%;
+}
+
+#imagem, #imagemUpdate{
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.concluido{
+    color: green;
+}
+
+.pendente{
+    color:#a77311;
+}
+
+.voltar{
+    background-color: #D45666;
+    color: white;
+    font-size: large;
+    text-decoration: underline;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    transition: 0.3s ease;
+}
+
+.voltar svg{
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.funcPedidos{
+    background-color: #cfcfcf;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: large;
+    display: flex;
+    width: fit-content;
+    gap: 10px;
+    flex-wrap: wrap
+}
+
+.funcPedidos a{
+    color: white;
+    background-color: #D45666;
+    padding: 5px 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.funcPedidos a:hover, .voltar:hover{
+    filter: brightness(1.3);
+}
+
+.desabilitado{
+    opacity: 0.5;
+}
+
